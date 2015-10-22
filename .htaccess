@@ -11,3 +11,6 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+# Désactiver l'affichage des répertoires
+Options -Indexes

@@ -1,0 +1,19 @@
+<Limit GET POST PUT>
+order deny,allow
+deny from all
+# IP d'Alex
+allow from xxx.xxx.xxx.xxx
+# IP de Nico
+allow from xxx.xxx.xxx.xxx
+# IP d'un autre point d'accès
+allow from xxx.xxx.xxx.xxx
+</Limit>
+
+# Seconde authentification pour l'administration
+AuthName "Connexion à l'administration"
+AuthType Basic
+AuthUserFile "/chemin/complet/vers/le/fichier/.htpasswd"
+
+<limit GET POST>
+Require valid-user
+</limit>

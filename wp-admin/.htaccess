@@ -10,6 +10,12 @@ allow from xxx.xxx.xxx.xxx
 </Limit>
 
 # Seconde authentification pour l'administration
+<Files admin-ajax.php>
+Order allow,deny
+Allow from all
+Satisfy any 
+</Files>
+
 AuthName "Connexion à l'administration"
 AuthType Basic
 AuthUserFile "/chemin/complet/vers/le/fichier/.htpasswd"

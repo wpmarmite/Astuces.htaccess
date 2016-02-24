@@ -20,6 +20,4 @@ AuthName "Connexion à l'administration"
 AuthType Basic
 AuthUserFile "/chemin/complet/vers/le/fichier/.htpasswd"
 
-<limit GET POST>
 Require valid-user
-</limit>

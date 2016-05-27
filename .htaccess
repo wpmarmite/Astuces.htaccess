@@ -45,6 +45,13 @@ RewriteCond %{HTTP_USER_AGENT} ^$
 RewriteRule (.*) ^http://%{REMOTE_ADDR}/$ [R=301,L]
 </IfModule>
 
+# Éviter que l'on découvre l'identifiant d'un auteur
+# Merci à Jean-Michel Silone du groupe Facebook WP-Secure https://www.facebook.com/groups/wp.securite/
+<IfModule mod_rewrite.c>
+RewriteCond %{QUERY_STRING} ^author=([0-9]*)
+RewriteRule .* - [F]
+</IfModule>
+
 # Désactiver le hotlinking de vos images
 RewriteEngine On
 RewriteCond %{HTTP_REFERER} !^$
